@@ -1,0 +1,11 @@
+<h2>Search results for <%= @title %></h2>
+
+<div class="search_list">
+  <ul>
+    <% @search.each do |book| %>
+      <!-- <a href="/book_result?id=<%= title["identifier"] %>"> -->
+        <li><%= book["title"] %></li>
+      <!-- </a> -->
+    <% end %>
+  </ul>
+</div>
