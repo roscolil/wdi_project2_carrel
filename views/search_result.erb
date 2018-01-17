@@ -4,7 +4,23 @@
   <ol>
     <% @search.each do |book| %>
       <a href="/search_result">
-        <li><%= book[1] %></li>
+        <!-- <li> -->
+          <img src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>" alt="">
+        <!-- </li> -->
+      </a>
+    <% end %>
+  </ol>
+  <ol>
+    <% @search.each do |book| %>
+      <a href="/search_result">
+        <li><%= book["volumeInfo"]["title"] %></li>
+      </a>
+    <% end %>
+  </ol>
+  <ol>
+    <% @search.each do |book| %>
+      <a href="/search_result">
+        <li><%= book["volumeInfo"]["authors"][0] %></li>
       </a>
     <% end %>
   </ol>

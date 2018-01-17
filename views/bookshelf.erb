@@ -7,10 +7,40 @@
   <input type="text" name="genre">
   <label for="">Author</label>
   <input type="text" name="author">
+  <br>
   <button>Add</button>
 </form>
 
-
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Book ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Author</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
 
 
 <% @books.each do |book| %>

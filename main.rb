@@ -32,7 +32,9 @@ end
 get '/search_result' do
   @book= params[:book]
   result = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{@book}").parsed_response
-  @search = result["items"][0]["volumeInfo"]
+  @search = result["items"]
+  @thumbnail = result["items"]
+
    # @id = result["items"][0]["volumeInfo"]["industryIdentifiers"][0]["identifier"]
   erb :search_result
 end
@@ -49,7 +51,7 @@ get '/book_result' do
   @page_count = book_result["pageCount"]
   @category = book_result["categories"]
   @rating = book_result["averageRating"]
-  # @thumbnail = book_result["imageLinks"]["smallThumbnail"]
+  @thumbnail = book_result["imageLinks"]["smallThumbnail"]
 
   erb :book_result
 end
@@ -62,14 +64,19 @@ get '/login' do
   erb :login
 end
 
-# post '/users' do
-#   user = User.new
-#   user.email = params[:email]
-#   user.password = params[:password]
-#   user.save
-#   session[:user_id] = user.id
-#   redirect '/bookshelf'
-# end
+post '/users' do
+  user_exists = User.find_by(email: params[:email])
+  if user_exists.email == params[:email]
+    erb :login
+  else
+  user = User.new
+  user.email = params[:email]
+  user.password = params[:password]
+  user.save
+  session[:user_id] = user.id
+  redirect '/bookshelf'
+  end
+end
 
 get '/bookshelf' do
   #redirect '/login' unless logged_in?
