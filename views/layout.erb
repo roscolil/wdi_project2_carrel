@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Carrel</title>
   <link rel='stylesheet' href='/public/stylesheets/main.css'>
 </head>
 <body>
   <header>
     <nav>
-      <a href="/">Home</a><a href="#">Login</a>
+      <h1>Carrel</h1><h2>Book cataloging tool</h2>
+      <a href="/">Home</a><a href="/bookshelf">Bookshelf</a> <a href="/about">About</a><a href="/login">Login</a>
     </nav>
+
+    <% if logged_in? %>
+      <p>Logged in as: <%= current_user.email %></p>    <!-- used to test or let user know their logged in -->
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Sign out</button>
+    </form>
+    <% end %>
   </header>
 
   <main>
@@ -17,7 +26,7 @@
   </main>
 
   <footer>
-    
+
   </footer>
 </body>
 </html>

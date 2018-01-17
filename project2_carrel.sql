@@ -9,14 +9,14 @@ users				→ id, name, email, password_digest */
 
 CREATE DATABASE carrel_db;
 
-CREATE TABLE bookshelf (
+CREATE TABLE bookshelves (
   id SERIAL PRIMARY KEY,
   title VARCHAR(300),
   genre VARCHAR(300),
   author VARCHAR(300)
   );
 
-CREATE TABLE wishlist (
+CREATE TABLE wishlists (
   id SERIAL PRIMARY KEY,
   title VARCHAR(300),
   genre VARCHAR(300),
@@ -31,7 +31,6 @@ CREATE TABLE comments (
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(300),
   email VARCHAR(300) NOT NULL,
   password_digest VARCHAR(300)
   );
