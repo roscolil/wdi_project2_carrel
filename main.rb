@@ -33,7 +33,7 @@ get '/search_result' do
   @book= params[:book]
   result = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{@book}").parsed_response
   @search = result["items"][0]["volumeInfo"]
-  #@id = result["items"][0]["volumeInfo"]["industryIdentifiers"][0]["identifier"]
+   # @id = result["items"][0]["volumeInfo"]["industryIdentifiers"][0]["identifier"]
   erb :search_result
 end
 
@@ -49,7 +49,7 @@ get '/book_result' do
   @page_count = book_result["pageCount"]
   @category = book_result["categories"]
   @rating = book_result["averageRating"]
-  @thumbnail = book_result["imageLinks"]["smallThumbnail"]
+  # @thumbnail = book_result["imageLinks"]["smallThumbnail"]
 
   erb :book_result
 end
@@ -62,13 +62,22 @@ get '/login' do
   erb :login
 end
 
+# post '/users' do
+#   user = User.new
+#   user.email = params[:email]
+#   user.password = params[:password]
+#   user.save
+#   session[:user_id] = user.id
+#   redirect '/bookshelf'
+# end
+
 get '/bookshelf' do
   #redirect '/login' unless logged_in?
+  @books = Book.all.pluck(:title)
   erb :bookshelf
 end
 
 # get '/bookshelf/:id' do
-#
 #   @book = Book.find(params[:id])
 #   @comments = Comment.where(book_id: params[:id])   # or @dish.id
 #   erb :bookshelf
@@ -80,8 +89,7 @@ post '/bookshelf' do  # add a new record
  book.genre = params[:genre]
  book.author = params[:author]
  book.save
-
- redirect '/bookshelf'
+redirect '/bookshelf'
 end
 
 post '/comments' do
@@ -99,12 +107,17 @@ get '/wishlist' do
   erb :wishlist
 end
 
+post '/wishlist' do
+
+end
+
+# Handles login/logout and user sessions
 post '/session' do
   user = User.find_by(email: params[:email])
 
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/bookshelf'
   else
     erb :login
   end

@@ -3,7 +3,7 @@
 <div class="search_list">
   <ul>
     <% @search.each do |book| %>
-      <a href="/book_result">
+      <a href="#">
         <li><%= book[1] %></li>
       </a>
     <% end %>
@@ -12,3 +12,4 @@
 
 <!-- /id=<%= book["industryIdentifiers"][0]["identifier"] -->
 <!-- "#{book[0]}: #{book[1]}" -->
+<!-- /book_result?id=<%=    %> -->

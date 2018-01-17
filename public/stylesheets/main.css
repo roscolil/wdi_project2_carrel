@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fed27c;
+}
+header {
+  display: inline;
+}
+
+.login_btn {
+  float: right;
+  margin-top: 0;
+}
+
+.top_nav a {
+  margin: 5px;
+}
+
+/* .top_nav h1, h3 {
+  float: left;
+} */
+
+.top_nav h1 {
+  margin-right: 5px;
+  margin-top: 14px;
+}
+
+.book_list {
+  list-style: none;
+  text-decoration: none;
+}

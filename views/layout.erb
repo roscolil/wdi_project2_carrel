@@ -3,22 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Carrel</title>
-  <link rel='stylesheet' href='/public/stylesheets/main.css'>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
   <header>
-    <nav>
-      <h1>Carrel</h1><h2>Book cataloging tool</h2>
-      <a href="/">Home</a><a href="/bookshelf">Bookshelf</a> <a href="/about">About</a><a href="/login">Login</a>
+    <h1>Carrel</h1><h3>Book cataloging tool</h3>
+
+    <nav class="top_nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/bookshelf">Bookshelf</a>
+      <a href="/wishlist">Wishlist</a>
+
+      <div class="log_info">
+        <% if logged_in? %>
+          <p>Logged in as: <%= current_user.email %></p>
+          <form action="/session" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button>Sign out</button>
+          </form>
+        <% else %>
+            <form action="/login" method="get">
+              <button>Login</button>
+            </form>
+        <% end %>
+      </div>
     </nav>
 
-    <% if logged_in? %>
-      <p>Logged in as: <%= current_user.email %></p>    <!-- used to test or let user know their logged in -->
-    <form action="/session" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button>Sign out</button>
-    </form>
-    <% end %>
   </header>
 
   <main>
