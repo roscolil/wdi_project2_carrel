@@ -3,7 +3,9 @@ html {
 }
 
 body {
-  background-color: #fed27c;
+  /* background-color: #fed27c; */
+  background-image: url(/natural_paper.jpg);
+  margin: 0 5px 0 5px;
 }
 header {
   display: inline;
@@ -14,20 +16,30 @@ header {
   margin-top: 0;
 }
 
-.top_nav a {
-  margin: 5px;
+.top_nav li a {
 }
 
 /* .top_nav h1, h3 {
   float: left;
 } */
 
-.top_nav h1 {
+/* .top_nav h1 {
   margin-right: 5px;
   margin-top: 14px;
-}
+} */
 
-.book_list {
+.search_list a {
   list-style: none;
   text-decoration: none;
+  font-size: 20px;
+}
+
+.book_list a {
+  list-style: none;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.search_btn {
+  margin-bottom: 7px;
 }

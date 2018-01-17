@@ -2,18 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrel</title>
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
   <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
   <header>
     <h1>Carrel</h1><h3>Book cataloging tool</h3>
 
-    <nav class="top_nav">
+    <!-- <nav class="top_nav">
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/bookshelf">Bookshelf</a>
-      <a href="/wishlist">Wishlist</a>
+      <a href="/wishlist">Wishlist</a> -->
+      <nav class="navbar navbar-inverse">
+        <ul class="nav nav-pills top_nav">
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li><a href="/bookshelf">Bookshelf</a></li>
+          <li><a href="/wishlist">Wishlist</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+
 
       <div class="log_info">
         <% if logged_in? %>
@@ -39,5 +52,7 @@
   <footer>
 
   </footer>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
 </body>
 </html>

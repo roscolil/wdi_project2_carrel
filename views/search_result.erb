@@ -1,15 +1,11 @@
 <h2>Search results for <%= @book %></h2>
 
 <div class="search_list">
-  <ul>
+  <ol>
     <% @search.each do |book| %>
-      <a href="#">
+      <a href="/search_result">
         <li><%= book[1] %></li>
       </a>
     <% end %>
-  </ul>
+  </ol>
 </div>
-
-<!-- /id=<%= book["industryIdentifiers"][0]["identifier"] -->
-<!-- "#{book[0]}: #{book[1]}" -->
-<!-- /book_result?id=<%=    %> -->
