@@ -26,6 +26,9 @@ helpers do
 end
 
 get '/' do
+  @wishes = Wish.all.pluck
+  wish_id = Wish.all.pluck(:id)
+  @wish_total = wish_id.length
   erb :index
 end
 
@@ -54,6 +57,9 @@ get '/book_result' do
 end
 
 get '/about' do
+  @wishes = Wish.all.pluck
+  wish_id = Wish.all.pluck(:id)
+  @wish_total = wish_id.length
   erb :about
 end
 
@@ -78,6 +84,9 @@ end
 get '/bookshelf' do
   #redirect '/login' unless logged_in?
   @books = Book.all.pluck
+  @wishes = Wish.all.pluck
+  wish_id = Wish.all.pluck(:id)
+  @wish_total = wish_id.length
   erb :bookshelf
 end
 
@@ -87,13 +96,14 @@ get '/bookshelf/:id' do
   erb :bookshelf
 end
 
-post '/bookshelf' do  # add a new record
+post '/bookshelf' do
  book = Book.new
  book.title = params[:title]
  book.genre = params[:genre]
  book.author = params[:author]
+ book.comment = params[:comment]
  book.save
-redirect '/bookshelf'
+ redirect '/bookshelf'
 end
 
 post '/comments' do
@@ -104,12 +114,11 @@ post '/comments' do
   redirect "/bookshelf/#{comment.book_id}"
 end
 
-
 get '/wishlist' do
   #redirect '/login' unless logged_in?
-    @wishes = Wish.all.pluck
-    wish_id = Wish.all.pluck(:id)
-    @wish_total = wish_id.length
+  @wishes = Wish.all.pluck
+  wish_id = Wish.all.pluck(:id)
+  @wish_total = wish_id.length
   erb :wishlist
 end
 

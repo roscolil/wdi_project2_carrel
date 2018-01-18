@@ -7,6 +7,11 @@
   <input type="text" name="genre">
   <label for="">Author</label>
   <input type="text" name="author">
+  <!-- <form action="/comments" method="post"> -->
+  <!-- <input type="hidden" name="book_id" value="<%#= @book_id %>"> -->
+  <label for="">Notes</label>
+  <textarea name="body" rows="5" cols="70"></textarea>
+  <!-- </form> -->
   <br>
   <button>Add</button>
 </form>
@@ -22,11 +27,6 @@
     </tr>
   </thead>
 
-  <!-- <form action="/comments" method="post">
-    <input type="hidden" name="book_id" value="<%#= @book.id %>">
-    <textarea name="body" rows="4" cols="50"></textarea>
-    <button>Post comment</button>
-  </form> -->
 
   <hr>
     <tbody>
@@ -46,13 +46,6 @@
   <!-- <%# @comments.each do |comment| %>
     <p><%#= comment.body %></p>
   <%# end %> -->
-
-  <!-- <ol class="book_list">
-      <a href="#">
-        <li><%#= book %></li>
-      </a>
-  </ol> -->
-
 
 
 <!--  <%# @comments.each do |comment| %>

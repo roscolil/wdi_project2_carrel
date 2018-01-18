@@ -3,12 +3,11 @@ html {
 }
 
 body {
-  /* background-color: #fed27c; */
   background-image: url(/natural_paper.jpg);
   margin: 0 5px 0 5px;
 }
 header {
-  display: inline;
+  display: inline-block;
 }
 
 .login_btn {
@@ -16,17 +15,13 @@ header {
   margin-top: 0;
 }
 
-.top_nav li a {
+.navbar {
+
 }
 
-/* .top_nav h1, h3 {
+.main_heading {
   float: left;
-} */
-
-/* .top_nav h1 {
-  margin-right: 5px;
-  margin-top: 14px;
-} */
+}
 
 .search_list a {
   list-style: none;

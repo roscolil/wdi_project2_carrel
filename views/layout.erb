@@ -9,7 +9,12 @@
 </head>
 <body>
   <header>
-    <h1>Carrel</h1><h3>Book search and library catalogue</h3>
+    <div class="main_heading">
+      <h1>Carrel</h1><h3>Book search and library catalogue</h3>
+    </div>
+      <div class="">
+        <h4>Number of items in Wish list:<span><%= @wish_total %></span></h4>
+      </div>
 
       <nav class="navbar navbar-inverse">
         <ul class="nav nav-pills top_nav">
@@ -30,9 +35,11 @@
             <button>Sign out</button>
           </form>
         <% else %>
+          <div class="login_btn">
             <form action="/login" method="get">
               <button>Login</button>
             </form>
+          </div>
         <% end %>
       </div>
     </nav>
