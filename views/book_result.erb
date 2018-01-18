@@ -11,11 +11,11 @@
   <h4>Rating: <span><%= @rating %></span></h4>
   <h4>ISBN: <span><%= @id %></span></h4>
 </div>
-<div class="">
+<div class="book_result">
   <h4>Description: <span><%= @description %></span></h4>
 </div>
 
-
-<form class="" action="/wishes" method="post">
+<form action="/wishes" method="post">
+  <input type="hidden" name="id" value="<%= @id %>">
   <button>Add to Wishlist</button>
 </form>

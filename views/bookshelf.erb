@@ -33,17 +33,19 @@
 
       <% @books.each do |book| %>
       <tr>
-        <th scope="row"></th>
+        <th scope="row"><%= book %></th>
         <td><%= book %></td>
-        <td><%= @title %></td>
-        <td><%= @genre %></td>
-        <td><%= @author %></td>
-        <td><%= @comments %></td>
+        <td><%= book %></td>
+        <td><%=  %></td>
+        <td><%=  %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
 
+  <!-- <%# @comments.each do |comment| %>
+    <p><%#= comment.body %></p>
+  <%# end %> -->
 
   <!-- <ol class="book_list">
       <a href="#">

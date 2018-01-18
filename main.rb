@@ -1,8 +1,8 @@
-require 'pg'
+# require 'pg'
 require 'pry'
 require 'sinatra'
 require 'httparty'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 require_relative 'db_config'
 require_relative 'models/user'
 require_relative 'models/comment'
@@ -91,9 +91,9 @@ end
 
 post '/bookshelf' do  # add a new record
  book = Book.new
- book.title = @title
+ book.title = params[:title]
  book.genre = params[:genre]
- book.author = @author
+ book.author = params[:author]
  book.save
 redirect '/bookshelf'
 end
@@ -114,11 +114,31 @@ get '/wishlist' do
 end
 
 post '/wishes' do
+  book_wish = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{params[:id]}").parsed_response
+
+  wish_result = book_wish["items"][0]
+  @title = wish_result["volumeInfo"]["title"]
+  @genre = wish_result["volumeInfo"]["categories"][0]
+  @author = wish_result["volumeInfo"]["authors"][0]
+  # if wish_result["saleInfo"]["listPrice"]
+  begin
+    @price = wish_result["saleInfo"]["listPrice"]["amount"]
+  rescue
+    @price = 0
+  end
+  # else
+    # @price = 0
+  # end
+
   wish = Wish.new
-  wish.title = params[:title]
-  wish.genre = params[:genre]
-  wish.author = params[:author]
+  wish.title = @title
+  wish.genre = @genre
+  wish.author = @author
+  wish.price = @price
+
   wish.save
+
+  redirect '/'
 end
 
 # Handles login/logout and user sessions
