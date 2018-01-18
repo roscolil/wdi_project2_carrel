@@ -6,26 +6,31 @@
   <title>Carrel</title>
   <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
   <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="main_heading">
-      <h1>Carrel</h1><h3>Book search and library catalogue</h3>
+    <div class="container">
+          <h1>Carrel</h1><h3>Book search and library catalogue</h3>
+        </div>
+      </div>
     </div>
       <div class="">
         <h4>Number of items in Wish list:<span><%= @wish_total %></span></h4>
       </div>
-
-      <nav class="navbar navbar-inverse">
-        <ul class="nav nav-pills top_nav">
-          <li class="active">
-            <a href="/">Home</a>
-          </li>
-          <li><a href="/bookshelf">Bookshelf</a></li>
-          <li><a href="/wishlist">Wishlist</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
+      <div class="">
+        <nav class="navbar navbar-inverse">
+          <ul class="nav nav-pills top_nav">
+            <li class="active">
+              <a href="/">Home</a>
+            </li>
+            <li><a href="/bookshelf">Bookshelf</a></li>
+            <li><a href="/wishlist">Wishlist</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+      </div>
 
       <div class="log_info">
         <% if logged_in? %>
@@ -34,13 +39,13 @@
             <input type="hidden" name="_method" value="delete">
             <button>Sign out</button>
           </form>
-        <% else %>
+        <!-- <%# else %>
           <div class="login_btn">
             <form action="/login" method="get">
               <button>Login</button>
             </form>
           </div>
-        <% end %>
+        <% end %> -->
       </div>
     </nav>
   </header>

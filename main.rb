@@ -32,6 +32,7 @@ get '/' do
   erb :index
 end
 
+
 get '/search_result' do
   @book= params[:book]
   result = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{@book}").parsed_response
@@ -158,6 +159,10 @@ post '/wishes' do
   wish.save
   redirect '/'
 end
+
+# delete '/wishes' do
+#
+# end
 
 post '/session' do
   user = User.find_by(email: params[:email])
