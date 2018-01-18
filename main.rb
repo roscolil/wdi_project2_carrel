@@ -25,7 +25,6 @@ helpers do
   end
 end
 
-
 get '/' do
   erb :index
 end
@@ -51,7 +50,6 @@ get '/book_result' do
   @rating = book_search["averageRating"]
   @id = book_search["industryIdentifiers"][0]["identifier"]
   @thumbnail = book_search["imageLinks"]["smallThumbnail"]
-
   erb :book_result
 end
 
@@ -68,18 +66,18 @@ post '/users' do
   if user_exists.email == params[:email]
     erb :login
   else
-  user = User.new
-  user.email = params[:email]
-  user.password = params[:password]
-  user.save
-  session[:user_id] = user.id
-  redirect '/bookshelf'
+    user = User.new
+    user.email = params[:email]
+    user.password = params[:password]
+    user.save
+    session[:user_id] = user.id
+    redirect '/bookshelf'
   end
 end
 
 get '/bookshelf' do
   #redirect '/login' unless logged_in?
-  @books = Book.all.pluck(:title)
+  @books = Book.all.pluck
   erb :bookshelf
 end
 
@@ -103,45 +101,54 @@ post '/comments' do
   comment.body = params[:body]
   comment.book_id = params[:book_id]
   comment.save
-
   redirect "/bookshelf/#{comment.book_id}"
 end
 
 
 get '/wishlist' do
   #redirect '/login' unless logged_in?
+    @wishes = Wish.all.pluck
+    @wish_id = Wish.all.pluck(:id)
   erb :wishlist
 end
 
 post '/wishes' do
   book_wish = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{params[:id]}").parsed_response
-
   wish_result = book_wish["items"][0]
-  @title = wish_result["volumeInfo"]["title"]
-  @genre = wish_result["volumeInfo"]["categories"][0]
-  @author = wish_result["volumeInfo"]["authors"][0]
-  # if wish_result["saleInfo"]["listPrice"]
+
+  begin
+    @title = wish_result["volumeInfo"]["title"]
+  rescue
+    @title = " "
+  end
+
+  begin
+    @genre = wish_result["volumeInfo"]["categories"][0]
+  rescue
+    @genre = " "
+  end
+
+  begin
+    @author = wish_result["volumeInfo"]["authors"][0]
+  rescue
+    @author = " "
+  end
+
   begin
     @price = wish_result["saleInfo"]["listPrice"]["amount"]
   rescue
     @price = 0
   end
-  # else
-    # @price = 0
-  # end
 
   wish = Wish.new
   wish.title = @title
   wish.genre = @genre
   wish.author = @author
   wish.price = @price
-
   wish.save
-
   redirect '/'
 end
 
-# Handles login/logout and user sessions
 post '/session' do
   user = User.find_by(email: params[:email])
 

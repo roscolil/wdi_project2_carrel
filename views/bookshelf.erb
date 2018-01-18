@@ -33,11 +33,11 @@
 
       <% @books.each do |book| %>
       <tr>
-        <th scope="row"><%= book %></th>
-        <td><%= book %></td>
-        <td><%= book %></td>
-        <td><%=  %></td>
-        <td><%=  %></td>
+        <th scope="row"><%= book[0] %></th>
+        <td><%= book[1] %></td>
+        <td><%= book[2] %></td>
+        <td><%= book[3] %></td>
+        <td><%= book[4] %></td>
       </tr>
       <% end %>
     </tbody>

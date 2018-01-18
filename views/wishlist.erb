@@ -1,8 +1,33 @@
 <h2>Wishlist</h2>
 
 <div class="">
-  <h4>Number of items in Wish list:<span><%= %></span></h4>
+  <h4>Number of items in Wish list:<span><%= @id %></span></h4>
 </div>
-<!--
-Could use book_result page/link here
- -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Author</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <hr>
+    <tbody>
+
+      <% @wishes.each do |wish| %>
+
+      <tr>
+        <th scope="row"><%= wish[1] %></th>
+        <td><%= wish[2] %></td>
+        <td><%= wish[3] %></td>
+        <td><%= wish[4] %></td>
+        <td><%= wish[5] %></td>
+        <td><button>Purchase</button></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
