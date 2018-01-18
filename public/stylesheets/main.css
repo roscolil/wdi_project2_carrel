@@ -43,3 +43,7 @@ header {
 .search_btn {
   margin-bottom: 7px;
 }
+
+.book_result h4 span {
+  font-weight: lighter;
+}

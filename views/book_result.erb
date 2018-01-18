@@ -1,18 +1,21 @@
-<h2>Book result for <%= @title %></h2>
-
-<div class="results">
-  <h2>Title: <span><%= @title %></span></h2>
-  <h2>Author: <span><%= @author %></span></h2>
-  <h2>Publisher: <span><%= @publisher %></span></h2>
-  <h2>Published Date: <span><%= @published_date %></span></h2>
-  <h2>Page Count: <span><%= @page_count %></span></h2>
-  <h2>Category: <span><%= @category %></span></h2>
-  <h2>Rating: <span><%= @rating %></span></h2>
-  <h2>ISBN: <span><%= @id %></span></h2>
-</div>
-<div class="">
-  <h2>Description: <span><%= @description %></span></h2>
-</div>
-
+<h3>Book result for <%= @title %></h3>
 
 <img src="<%= @thumbnail %>">
+<div class="book_result">
+  <h4>Title: <span><%= @title %></span></h4>
+  <h4>Author: <span><%= @author %></span></h4>
+  <h4>Publisher: <span><%= @publisher %></span></h4>
+  <h4>Published Date: <span><%= @published_date %></span></h4>
+  <h4>Page Count: <span><%= @page_count %></span></h4>
+  <h4>Category: <span><%= @category %></span></h4>
+  <h4>Rating: <span><%= @rating %></span></h4>
+  <h4>ISBN: <span><%= @id %></span></h4>
+</div>
+<div class="">
+  <h4>Description: <span><%= @description %></span></h4>
+</div>
+
+
+<form class="" action="/wishes" method="post">
+  <button>Add to Wishlist</button>
+</form>

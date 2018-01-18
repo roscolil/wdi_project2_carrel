@@ -16,11 +16,11 @@ CREATE TABLE books (
   author VARCHAR(300)
   );
 
-CREATE TABLE wishlists (
+CREATE TABLE wishes (
   id SERIAL PRIMARY KEY,
   title VARCHAR(300),
   genre VARCHAR(300),
-  author VARCHAR(300),
+  author VARCHAR(300)
   );
 
 CREATE TABLE comments (

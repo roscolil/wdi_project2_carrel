@@ -7,6 +7,7 @@ require_relative 'db_config'
 require_relative 'models/user'
 require_relative 'models/comment'
 require_relative 'models/book'
+require_relative 'models/wish'
 
 enable :sessions
 
@@ -38,17 +39,18 @@ end
 
 get '/book_result' do
   book_result = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{params[:id]}").parsed_response
-  @book_search = book_result["items"][0]["volumeInfo"]
+  book_search = book_result["items"][0]["volumeInfo"]
 
-  @title = book_result["title"]
-  @author = book_result["authors"]
-  @publisher = book_result["publishedDate"]
-  @published_date = book_result["publishedDate"]
-  @description = book_result["description"]
-  @page_count = book_result["pageCount"]
-  @category = book_result["categories"]
-  @rating = book_result["averageRating"]
-  @thumbnail = book_result["imageLinks"]["smallThumbnail"]
+  @title = book_search["title"]
+  @author = book_search["authors"][0]
+  @publisher = book_search["publisher"]
+  @published_date = book_search["publishedDate"]
+  @description = book_search["description"]
+  @page_count = book_search["pageCount"]
+  @category = book_search["categories"][0]
+  @rating = book_search["averageRating"]
+  @id = book_search["industryIdentifiers"][0]["identifier"]
+  @thumbnail = book_search["imageLinks"]["smallThumbnail"]
 
   erb :book_result
 end
@@ -81,17 +83,17 @@ get '/bookshelf' do
   erb :bookshelf
 end
 
-# get '/bookshelf/:id' do
-#   @book = Book.find(params[:id])
-#   @comments = Comment.where(book_id: params[:id])   # or @dish.id
-#   erb :bookshelf
-# end
+get '/bookshelf/:id' do
+  @book = Book.find(params[:id])
+  @comments = Comment.where(book_id: params[:id])
+  erb :bookshelf
+end
 
 post '/bookshelf' do  # add a new record
  book = Book.new
- book.title = params[:title]
+ book.title = @title
  book.genre = params[:genre]
- book.author = params[:author]
+ book.author = @author
  book.save
 redirect '/bookshelf'
 end
@@ -111,8 +113,12 @@ get '/wishlist' do
   erb :wishlist
 end
 
-post '/wishlist' do
-
+post '/wishes' do
+  wish = Wish.new
+  wish.title = params[:title]
+  wish.genre = params[:genre]
+  wish.author = params[:author]
+  wish.save
 end
 
 # Handles login/logout and user sessions

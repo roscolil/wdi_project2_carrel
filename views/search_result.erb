@@ -13,17 +13,11 @@
           <li><%= book["volumeInfo"]["title"] %></li>
         </a>
         <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
-          <li><%= book["volumeInfo"]["authors"][0] %></li>
+          <% if book["volumeInfo"]["authors"] %>
+            <li><%= book["volumeInfo"]["authors"][0] %></li>
+          <% end %>
         </a>
       <% end %>
     <% end %>
   </ol>
-  <!-- <ol>
-    <%# @search.each do |book| %>
-    <%# end %>
-  </ol>
-  <ol>
-    <%# @search.each do |book| %>
-    <%# end %>
-  </ol> -->
 </div>

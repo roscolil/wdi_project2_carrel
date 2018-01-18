@@ -18,38 +18,41 @@
       <th scope="col">Title</th>
       <th scope="col">Genre</th>
       <th scope="col">Author</th>
+      <th scope="col">Comments</th>
     </tr>
   </thead>
-  <tbody>
+
+  <!-- <form action="/comments" method="post">
+    <input type="hidden" name="book_id" value="<%#= @book.id %>">
+    <textarea name="body" rows="4" cols="50"></textarea>
+    <button>Post comment</button>
+  </form> -->
+
+  <hr>
+    <tbody>
+
+      <% @books.each do |book| %>
       <tr>
         <th scope="row"></th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td><%= book %></td>
+        <td><%= @title %></td>
+        <td><%= @genre %></td>
+        <td><%= @author %></td>
+        <td><%= @comments %></td>
       </tr>
-      <tr>
-        <th scope="row"></th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row"></th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      <% end %>
     </tbody>
   </table>
 
 
-<% @books.each do |book| %>
-  <ol class="book_list">
+  <!-- <ol class="book_list">
       <a href="#">
-        <li><%= book %></li>
+        <li><%#= book %></li>
       </a>
-  </ol>
-<% end %>
+  </ol> -->
 
 
-<!-- /wishlist?id=<%=    %> -->
+
+<!--  <%# @comments.each do |comment| %>
+ <p><%#= comment.body %></p>
+ <%# end %> -->
