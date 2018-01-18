@@ -108,7 +108,8 @@ end
 get '/wishlist' do
   #redirect '/login' unless logged_in?
     @wishes = Wish.all.pluck
-    @wish_id = Wish.all.pluck(:id)
+    wish_id = Wish.all.pluck(:id)
+    @wish_total = wish_id.length
   erb :wishlist
 end
 
