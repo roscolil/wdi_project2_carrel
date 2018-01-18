@@ -106,13 +106,13 @@ post '/bookshelf' do
  redirect '/bookshelf'
 end
 
-post '/comments' do
-  comment = Comment.new
-  comment.body = params[:body]
-  comment.book_id = params[:book_id]
-  comment.save
-  redirect "/bookshelf/#{comment.book_id}"
-end
+# post '/comments' do
+#   comment = Comment.new
+#   comment.body = params[:body]
+#   comment.book_id = params[:book_id]
+#   comment.save
+#   redirect "/bookshelf/#{comment.book_id}"
+# end
 
 get '/wishlist' do
   #redirect '/login' unless logged_in?
