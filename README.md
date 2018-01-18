@@ -28,6 +28,7 @@ The complexity of google books google api
 Some basic bootstrap techniques for buttons, nav/search bars, tables
 
 Version 2.0:
+Refactor api queries
 Sort/Filter book catalogue
 Link/button to get quotes and/or sell collections
 Option to purchase books in wish list

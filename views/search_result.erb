@@ -3,25 +3,27 @@
 <div class="search_list">
   <ol>
     <% @search.each do |book| %>
-      <a href="/search_result">
-        <!-- <li> -->
-          <img src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>" alt="">
-        <!-- </li> -->
-      </a>
+      <% if book["volumeInfo"]["industryIdentifiers"] %>
+        <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
+          <li>
+            <img src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
+          </li>
+        </a>
+        <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
+          <li><%= book["volumeInfo"]["title"] %></li>
+        </a>
+        <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
+          <li><%= book["volumeInfo"]["authors"][0] %></li>
+        </a>
+      <% end %>
     <% end %>
+  </ol>
+  <!-- <ol>
+    <%# @search.each do |book| %>
+    <%# end %>
   </ol>
   <ol>
-    <% @search.each do |book| %>
-      <a href="/search_result">
-        <li><%= book["volumeInfo"]["title"] %></li>
-      </a>
-    <% end %>
-  </ol>
-  <ol>
-    <% @search.each do |book| %>
-      <a href="/search_result">
-        <li><%= book["volumeInfo"]["authors"][0] %></li>
-      </a>
-    <% end %>
-  </ol>
+    <%# @search.each do |book| %>
+    <%# end %>
+  </ol> -->
 </div>

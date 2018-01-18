@@ -33,15 +33,12 @@ get '/search_result' do
   @book= params[:book]
   result = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{@book}").parsed_response
   @search = result["items"]
-  @thumbnail = result["items"]
-
-   # @id = result["items"][0]["volumeInfo"]["industryIdentifiers"][0]["identifier"]
   erb :search_result
 end
 
 get '/book_result' do
   book_result = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{params[:id]}").parsed_response
-  #@book_search = book_result["items"][0]["volumeInfo"]
+  @book_search = book_result["items"][0]["volumeInfo"]
 
   @title = book_result["title"]
   @author = book_result["authors"]
