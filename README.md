@@ -1,6 +1,10 @@
 # Carrel
 ## Book search and cataloging tool
 
+```
+https://github.com/roscolil/wdi_project2_carrel
+```
+
 Use cases:
 1. Search for by title/author using the google books api and store selection into a wish list.
 2. To be a tool to store and keep track of your book library at home.

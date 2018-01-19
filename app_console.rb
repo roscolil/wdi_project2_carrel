@@ -6,4 +6,4 @@ require_relative 'models/book'
 require_relative 'models/wish'
 
 
-binding.pry
+# binding.pry

@@ -2,7 +2,7 @@
 require 'pry'
 require 'sinatra'
 require 'httparty'
-require 'sinatra/reloader'
+# require 'sinatra/reloader'
 require_relative 'db_config'
 require_relative 'models/user'
 require_relative 'models/comment'
@@ -129,25 +129,13 @@ post '/wishes' do
 
   begin
     @title = wish_result["volumeInfo"]["title"]
-  rescue
-    @title = " "
-  end
-
-  begin
     @genre = wish_result["volumeInfo"]["categories"][0]
-  rescue
-    @genre = " "
-  end
-
-  begin
     @author = wish_result["volumeInfo"]["authors"][0]
-  rescue
-    @author = " "
-  end
-
-  begin
     @price = wish_result["saleInfo"]["listPrice"]["amount"]
   rescue
+    @title = " "
+    @genre = " "
+    @author = " "
     @price = 0
   end
 
