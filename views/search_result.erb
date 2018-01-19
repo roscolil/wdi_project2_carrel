@@ -8,10 +8,10 @@
         <% if book["volumeInfo"]["industryIdentifiers"] %>
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
             <div class="col-md">
-            <li>
-              <img src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
-            </li>
-          </div>
+              <li>
+                <img src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
+              </li>
+            </div>
           </a>
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
             <div class="col-md">
@@ -20,10 +20,10 @@
           </a>
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
             <div class="col-md">
-            <% if book["volumeInfo"]["authors"] %>
-              <li><%= book["volumeInfo"]["authors"][0] %></li>
-            <% end %>
-          </div>
+              <% if book["volumeInfo"]["authors"] %>
+                <li><%= book["volumeInfo"]["authors"][0] %></li>
+              <% end %>
+            </div>
           </a>
         <% end %>
       <% end %>

@@ -160,10 +160,11 @@ post '/wishes' do
   redirect '/wishlist'
 end
 
-delete '/wishes' do
-  
-  redirect '/wishlist'
-end
+# delete '/wishes/:id' do
+#     wish = Wish.find(params[:id])
+#     wish.destroy
+#   redirect '/wishlist'
+# end
 
 post '/session' do
   user = User.find_by(email: params[:email])

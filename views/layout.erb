@@ -43,7 +43,7 @@
 
   <div class="log_info">
     <% if logged_in? %>
-      <p>Logged in as:
+      <p class="login_msg">Logged in as:
         <%= current_user.email %></p>
       <form action="/session" method="post">
         <input type="hidden" name="_method" value="delete">

@@ -6,6 +6,7 @@ body {
   background-image: url(/natural_paper.jpg);
   margin: 0 5px 0 5px;
 }
+
 header {
   display: inline-block;
 }
@@ -45,7 +46,6 @@ header {
   font-size: 35px;
   padding-top: 10px;
 }
-
 
 .main_heading {
   float: left;
@@ -88,4 +88,8 @@ button.btn.btn-primary {
 
 button.btn.btn-primary.search_btn {
   margin-bottom: 9px;
+}
+
+.login_msg {
+  font-weight: bold;
 }
