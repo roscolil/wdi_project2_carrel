@@ -3,6 +3,7 @@
 
 ```
 https://github.com/roscolil/wdi_project2_carrel
+https://carrelcatalogue.herokuapp.com
 ```
 
 Use cases:
@@ -16,14 +17,14 @@ As is stands you can currently search the google book api and click on images or
 Additionally you can login to use the book catalogue. It's called bookshelf and it's purpose is to be a cataloging tool for peoples personal libraries.
 
 
-###Technology used:
+### Technology used:
 Only new tech is bootstrap
 
-###Lessons learned:
+### Lessons learned:
 The complexity of google books api
 Some basic bootstrap techniques for buttons, nav/search bars, tables
 
-###Version 2.0:
+### Version 2.0:
 Display number of hits
 Share book reviews/ratings
 Refactor api requests
