@@ -1,7 +1,7 @@
 <h2>Wishlist</h2>
 
 <form action="/" method="get">
-  <button>Another Search</button>
+  <button class="btn btn-primary search_btn">Another Search</button>
 </form>
 
 <table class="table">
@@ -24,11 +24,12 @@
           <td><%= wish[3] %></td>
           <td><%= wish[4] %></td>
           <td><%= wish[5] %></td>
-          <td><button>Purchase</button></td>
-          <!-- <form class="" action="/wishes" method="post">
+          <td><button class="btn btn-primary">Purchase</button></td>
+          <form class="" action="/wishes" method="post">
             <input type="hidden" name="_method" value="delete">
-            <td><button>Delete</button></td> -->
+            <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
           </form>
+
         </tr>
       <% end %>
     </tbody>

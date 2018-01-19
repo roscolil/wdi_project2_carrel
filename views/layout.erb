@@ -16,36 +16,38 @@
         </div>
       </div>
     </div>
-      <div class="">
-        <h4>Number of items in Wish list:<span><%= @wish_total %></span></h4>
-      </div>
-      <div class="">
-        <nav class="navbar navbar-inverse">
-          <ul class="nav nav-pills top_nav">
-            <li class="active">
-              <a href="/">Home</a>
-            </li>
-            <li><a href="/bookshelf">Bookshelf</a></li>
-            <li><a href="/wishlist">Wishlist</a></li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </nav>
-      </div>
+    <% if logged_in? %>
+    <div class="wishlist">
+      <h4>Number of items in Wish list:<span class="wishes"><%= @wish_total %></span></h4>
+    </div>
+    <% end %>
+    <div class="">
+      <nav class="navbar navbar-inverse">
+        <ul class="nav nav-pills top_nav">
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li><a href="/bookshelf">Bookshelf</a></li>
+          <li><a href="/wishlist">Wishlist</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </div>
 
       <div class="log_info">
         <% if logged_in? %>
           <p>Logged in as: <%= current_user.email %></p>
           <form action="/session" method="post">
             <input type="hidden" name="_method" value="delete">
-            <button>Sign out</button>
+            <button class="btn btn-primary">Sign out</button>
           </form>
         <!-- <%# else %>
           <div class="login_btn">
             <form action="/login" method="get">
               <button>Login</button>
             </form>
-          </div>
-        <% end %> -->
+          </div> -->
+        <% end %>
       </div>
     </nav>
   </header>

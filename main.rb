@@ -83,7 +83,7 @@ post '/users' do
 end
 
 get '/bookshelf' do
-  #redirect '/login' unless logged_in?
+  redirect '/login' unless logged_in?
   @books = Book.all.pluck
   @wishes = Wish.all.pluck
   wish_id = Wish.all.pluck(:id)
@@ -116,7 +116,7 @@ end
 # end
 
 get '/wishlist' do
-  #redirect '/login' unless logged_in?
+  redirect '/login' unless logged_in?
   @wishes = Wish.all.pluck
   wish_id = Wish.all.pluck(:id)
   @wish_total = wish_id.length
@@ -157,12 +157,13 @@ post '/wishes' do
   wish.author = @author
   wish.price = @price
   wish.save
-  redirect '/'
+  redirect '/wishlist'
 end
 
-# delete '/wishes' do
-#
-# end
+delete '/wishes' do
+  
+  redirect '/wishlist'
+end
 
 post '/session' do
   user = User.find_by(email: params[:email])

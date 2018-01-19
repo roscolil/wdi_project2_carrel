@@ -20,7 +20,7 @@ The complexity of google books api
 Some basic bootstrap techniques for buttons, nav/search bars, tables
 
 ###Version 2.0:
-'Another Search' button on wish list page
+Display number of hits
 Share book reviews/ratings
 Refactor api requests
 Pagination for search results

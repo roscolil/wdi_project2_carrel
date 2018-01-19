@@ -1,7 +1,9 @@
-<h3>Login to access your catalogue and whishlist</h3>
+<% if !logged_in? %>
+<h3>Login to access your bookshelf and wishlist</h3>
+<% end %>
 
 <form action="/search_result">
-  <label for="">Search by Title or Author</label>
+  <label for="">Search books </label>
   <input type="text" name="book" placeholder="Enter here">
-  <button class="search_btn">Search</button>
+  <button class="btn btn-primary search_btn">Search</button>
 </form>

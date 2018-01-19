@@ -15,19 +15,8 @@ header {
   margin-top: 0;
 }
 
-.container h1 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 70px;
-}
-
-.container h3 {
-  font-family: 'Indie Flower', cursive;
-  font-size: 35px;
-  padding-top: 10px;
-}
-
-.main_heading {
-  float: left;
+.btn btn-primary {
+  color: black;
 }
 
 .search_list a {
@@ -42,10 +31,46 @@ header {
   font-size: 20px;
 }
 
+.container h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 70px;
+}
+
+.wishlist h4 span {
+  padding-left: 10px;
+}
+
+.container h3 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 35px;
+  padding-top: 10px;
+}
+
+
+.main_heading {
+  float: left;
+}
+
+.log_info p {
+  text-align: right;
+}
+
+.log_info form {
+  text-align: right;
+}
+
 .search_btn {
   margin-bottom: 7px;
 }
 
 .book_result h4 span {
   font-weight: lighter;
+}
+
+button.btn.btn-primary {
+  margin-bottom: 8px;
+}
+
+.about {
+  max-width: 70%;
 }
