@@ -1,65 +1,66 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrel</title>
-  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link rel='stylesheet' href='/stylesheets/main.css'>
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="container">
-          <h1>Carrel</h1><h3>Book search and library catalogue</h3>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrel</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel='stylesheet' href='/stylesheets/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Carrel</h1>
+        <h3>Book search and library catalogue</h3>
       </div>
     </div>
-    <% if logged_in? %>
+  </div>
+  <% if logged_in? %>
     <div class="wishlist">
       <h4>Number of items in Wish list:<span class="wishes"><%= @wish_total %></span></h4>
     </div>
-    <% end %>
-    <div class="">
-      <nav class="navbar navbar-inverse">
-        <ul class="nav nav-pills top_nav">
-          <li class="active">
-            <a href="/">Home</a>
-          </li>
-          <li><a href="/bookshelf">Bookshelf</a></li>
-          <li><a href="/wishlist">Wishlist</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-    </div>
-
-      <div class="log_info">
-        <% if logged_in? %>
-          <p>Logged in as: <%= current_user.email %></p>
-          <form action="/session" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <button class="btn btn-primary">Sign out</button>
-          </form>
-        <!-- <%# else %>
-          <div class="login_btn">
-            <form action="/login" method="get">
-              <button>Login</button>
-            </form>
-          </div> -->
-        <% end %>
-      </div>
+  <% end %>
+  <div class="">
+    <nav class="navbar navbar-inverse">
+      <ul class="nav nav-pills top_nav">
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/bookshelf">Bookshelf</a>
+        </li>
+        <li>
+          <a href="/wishlist">Wishlist</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
     </nav>
-  </header>
+  </div>
 
-  <main>
-    <%= yield %>
-  </main>
+  <div class="log_info">
+    <% if logged_in? %>
+      <p>Logged in as:
+        <%= current_user.email %></p>
+      <form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="btn btn-primary">Sign out</button>
+      </form>
+      <!-- <%# else %> <div class="login_btn"> <form action="/login" method="get"> <button>Login</button> </form> </div> -->
+    <% end %>
+  </div>
+</nav>
+</header>
 
-  <footer>
+<main>
+<%= yield %>
+</main>
 
-  </footer>
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="/javascripts/bootstrap.min.js"></script>
+<footer></footer>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
 </body>
 </html>

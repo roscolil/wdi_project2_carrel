@@ -68,9 +68,24 @@ header {
 }
 
 button.btn.btn-primary {
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 
 .about {
   max-width: 70%;
+}
+
+.form-group .login_label {
+  /* font-weight: bold; */
+  font-size: 18px;
+  vertical-align: bottom;
+  margin-left: 8px;
+}
+
+.search_label {
+  font-size: 18px;
+}
+
+button.btn.btn-primary.search_btn {
+  margin-bottom: 9px;
 }
