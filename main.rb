@@ -32,7 +32,6 @@ get '/' do
   erb :index
 end
 
-
 get '/search_result' do
   @book= params[:book]
   result = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{@book}").parsed_response
@@ -54,6 +53,7 @@ get '/book_result' do
   @rating = book_search["averageRating"]
   @id = book_search["industryIdentifiers"][0]["identifier"]
   @thumbnail = book_search["imageLinks"]["smallThumbnail"]
+  @price = book_result["items"][0]["saleInfo"]["listPrice"]["amount"]
   erb :book_result
 end
 
@@ -129,13 +129,22 @@ post '/wishes' do
 
   begin
     @title = wish_result["volumeInfo"]["title"]
-    @genre = wish_result["volumeInfo"]["categories"][0]
-    @author = wish_result["volumeInfo"]["authors"][0]
-    @price = wish_result["saleInfo"]["listPrice"]["amount"]
   rescue
     @title = " "
+  end
+  begin
+    @genre = wish_result["volumeInfo"]["categories"][0]
+  rescue
     @genre = " "
+  end
+  begin
+    @author = wish_result["volumeInfo"]["authors"][0]
+  rescue
     @author = " "
+  end
+  begin
+    @price = wish_result["saleInfo"]["listPrice"]["amount"]
+  rescue
     @price = 0
   end
 

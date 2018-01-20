@@ -1,4 +1,4 @@
-<h2>Search results for <%= @book %></h2>
+<h2>Search results for: <%= @book %></h2>
 
 <div class="container-fluid">
   <div class="search_list">
@@ -7,21 +7,21 @@
       <% @search.each do |book| %>
         <% if book["volumeInfo"]["industryIdentifiers"] %>
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
-            <div class="col-md">
-              <li>
+            <div class="list-inline">
+              <li class="list-inline-item">
                 <img src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
               </li>
             </div>
           </a>
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
-            <div class="col-md">
-              <li><%= book["volumeInfo"]["title"] %></li>
+            <div class="list-inline">
+              <li class="list-inline-item"><%= book["volumeInfo"]["title"] %></li>
             </div>
           </a>
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
-            <div class="col-md">
+            <div class="list-inline">
               <% if book["volumeInfo"]["authors"] %>
-                <li><%= book["volumeInfo"]["authors"][0] %></li>
+                <li class="list-inline-item"><%= book["volumeInfo"]["authors"][0] %></li>
               <% end %>
             </div>
           </a>
@@ -33,7 +33,7 @@
 </div>
 
 
-<div class="pagination">
+<!-- <div class="pagination">
   <ul>
     <li><a href="#">Prev</a></li>
     <li><a href="#">1</a></li>
@@ -43,4 +43,4 @@
     <li><a href="#">5</a></li>
     <li><a href="#">Next</a></li>
   </ul>
-</div>
+</div> -->

@@ -1,5 +1,4 @@
-<h3>Book result for
-  <%= @title %></h3>
+<h3>Book result for: <%= @title %></h3>
 
 <img src="<%= @thumbnail %>">
 <div class="book_result">
@@ -17,6 +16,8 @@
     <span><%= @category %></span></h4>
   <h4>Rating:
     <span><%= @rating %></span></h4>
+  <h4>Price:
+    <span><%= @price %></span></h4>
   <h4>ISBN:
     <span><%= @id %></span></h4>
 </div>
@@ -27,5 +28,5 @@
 
 <form action="/wishes" method="post">
   <input type="hidden" name="id" value="<%= @id %>">
-  <button class="btn btn-primary">Add to Wishlist</button>
+  <button class="btn btn-primary btn-sm">Add to Wishlist</button>
 </form>

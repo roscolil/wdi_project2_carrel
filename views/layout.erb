@@ -2,65 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Carrel</title>
-    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen"> -->
     <link rel='stylesheet' href='/stylesheets/main.css'>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker" rel="stylesheet">
   </head>
   <body>
     <header>
-      <div class="container">
-        <h1>Carrel</h1>
-        <h3>Book search and library catalogue</h3>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-2">
+            <span class="main_heading">Carrel</span>
+          </div>
+          <div class="col-lg-4">
+            <span class="sub_heading">Book search and library catalogue</span>
+          </div>
+          <div class="col-lg-6 text-right log_info">
+            <% if logged_in? %>
+              <span class="login_msg">Logged in as:
+                <%= current_user.email %>
+              </span>
+              <span>
+                <form action="/session" method="post">
+                  <input type="hidden" name="_method" value="delete">
+                  <button class="btn btn-primary btn-sm sign-out-btn">Sign out</button>
+                </form>
+              </span>
+              <!-- <%# else %> <div class="login_btn"> <form action="/login" method="get"> <button>Login</button> </form> </div> -->
+            <% end %>
+          </div>
+          <div class="clearfix"></div>
+        </div>
       </div>
-    </div>
-  </div>
-  <% if logged_in? %>
-    <div class="wishlist">
-      <h4>Number of items in Wish list:<span class="wishes"><%= @wish_total %></span></h4>
-    </div>
-  <% end %>
-  <div class="">
-    <nav class="navbar navbar-inverse">
-      <ul class="nav nav-pills top_nav">
-        <li class="active">
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/bookshelf">Bookshelf</a>
-        </li>
-        <li>
-          <a href="/wishlist">Wishlist</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
 
-  <div class="log_info">
-    <% if logged_in? %>
-      <p class="login_msg">Logged in as:
-        <%= current_user.email %></p>
-      <form action="/session" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button class="btn btn-primary">Sign out</button>
-      </form>
-      <!-- <%# else %> <div class="login_btn"> <form action="/login" method="get"> <button>Login</button> </form> </div> -->
-    <% end %>
-  </div>
-</nav>
-</header>
+      <nav class="navbar navbar-inverse bg-inverse">
+        <ul class="nav nav-pills top_nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/bookshelf">Bookshelf</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/wishlist">Wishlist</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <% if logged_in? %>
+            <div class="wishlist">
+              <span>Number of items in Wish list:
+                <span class="wishes"><%= @wish_total %></span></span>
+            </div>
+          <% end %>
+        </span>
+      </nav>
+      <div style="height: 30px;"></header>
 
-<main>
-<%= yield %>
-</main>
+      <main>
+        <%= yield %>
+      </main>
 
-<footer></footer>
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="/javascripts/bootstrap.min.js"></script>
-</body>
-</html>
+      <footer></footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+  </html>

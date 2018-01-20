@@ -7,17 +7,26 @@ body {
   margin: 0 5px 0 5px;
 }
 
-header {
+.navbar {
+  background-color: black;
+}
+
+.wishlist span {
+  color: white;
+  font-weight: lighter;
+}
+
+.log_info span {
   display: inline-block;
 }
 
-.login_btn {
-  float: right;
-  margin-top: 0;
+.nav-link {
+  color: white;
 }
 
-.btn btn-primary {
-  color: black;
+.sign-out-btn {
+  padding: 5 5;
+  font-size: 10px;
 }
 
 .search_list a {
@@ -32,39 +41,31 @@ header {
   font-size: 20px;
 }
 
-.container h1 {
+.main_heading {
   font-family: 'Permanent Marker', cursive;
-  font-size: 70px;
+  font-size: 45px;
+}
+
+.sub_heading {
+  font-family: 'Indie Flower', cursive;
+  font-size: 23px;
+}
+
+.login_msg {
+  font-size: 13px;
 }
 
 .wishlist h4 span {
-  padding-left: 10px;
+  padding-left: 7px;
 }
 
-.container h3 {
-  font-family: 'Indie Flower', cursive;
-  font-size: 35px;
-  padding-top: 10px;
+.bookshelf_form .notes {
+  margin-bottom: 0;
+  /* vertical-align: bottom; */
 }
 
-.main_heading {
-  float: left;
-}
-
-.log_info p {
-  text-align: right;
-}
-
-.log_info form {
-  text-align: right;
-}
-
-.search_btn {
-  margin-bottom: 7px;
-}
-
-.book_result h4 span {
-  font-weight: lighter;
+button .btn .btn-primary .search_btn {
+  margin-bottom: 0px;
 }
 
 button.btn.btn-primary {
@@ -84,12 +85,4 @@ button.btn.btn-primary {
 
 .search_label {
   font-size: 18px;
-}
-
-button.btn.btn-primary.search_btn {
-  margin-bottom: 9px;
-}
-
-.login_msg {
-  font-weight: bold;
 }
