@@ -12,12 +12,37 @@
   </head>
   <body>
     <header>
+      <nav class="navbar navbar-inverse bg-inverse">
+        <ul class="nav nav-pills top_nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/bookshelf">Bookshelf</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/wishlist">Wishlist</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <% if logged_in? %>
+          <div class="wishlist">
+            <span>Items in Wishlist:
+              <span class="wishes"><%= @wish_total %></span></span>
+            </div>
+            <% end %>
+          </span>
+        </nav>
+
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-2 main_heading">
             <span>Carrel</span>
           </div>
-          <div class="col-lg-4 align-bottom sub_heading">
+          <div class="col-lg-4 sub_heading">
             <span>Book search and library catalogue</span>
           </div>
           <div class="col-lg-6 text-right log_info">
@@ -42,38 +67,19 @@
           <div class="clearfix"></div>
         </div>
       </div>
+    </header>
 
-      <nav class="navbar navbar-inverse bg-inverse">
-        <ul class="nav nav-pills top_nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/bookshelf">Bookshelf</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/wishlist">Wishlist</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/about">About</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-          <% if logged_in? %>
-            <div class="wishlist">
-              <span>Items in Wishlist:
-                <span class="wishes"><%= @wish_total %></span></span>
-            </div>
-          <% end %>
-        </span>
-      </nav>
-      <div style="height: 30px;"></header>
+      <div style="height: 30px;"></div>
 
       <main>
         <%= yield %>
       </main>
 
-      <footer></footer>
+      <!-- <footer>
+        <div style="height: 30px;"></div>
+        <p class="footer">Made by Ross Lillis 2018</p>
+      </footer> -->
+
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

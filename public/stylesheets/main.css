@@ -9,11 +9,16 @@ body {
 
 .navbar {
   background-color: black;
+  opacity: 0.7;
 }
 
 .wishlist span {
   color: white;
   font-weight: lighter;
+}
+
+.wish_heading {
+  text-align: center;
 }
 
 .log_info {
@@ -32,6 +37,7 @@ body {
 .nav-link {
   color: white;
 }
+
 
 .login_btn,
 .sign-out-btn {
@@ -115,4 +121,9 @@ button.btn.btn-primary {
 
 .access_msg {
   text-align: center;
+}
+
+.footer {
+  text-align: center;
+  font-size: 10px;
 }
