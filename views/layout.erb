@@ -14,15 +14,15 @@
     <header>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-2">
-            <span class="main_heading">Carrel</span>
+          <div class="col-lg-2 main_heading">
+            <span>Carrel</span>
           </div>
-          <div class="col-lg-4">
-            <span class="sub_heading">Book search and library catalogue</span>
+          <div class="col-lg-4 align-bottom sub_heading">
+            <span>Book search and library catalogue</span>
           </div>
           <div class="col-lg-6 text-right log_info">
             <% if logged_in? %>
-              <span class="login_msg">Logged in as:
+              <span class="login_msg"><span class="login_msg_bold">Logged in as: </span>
                 <%= current_user.email %>
               </span>
               <span>
@@ -31,7 +31,12 @@
                   <button class="btn btn-primary btn-sm sign-out-btn">Sign out</button>
                 </form>
               </span>
-              <!-- <%# else %> <div class="login_btn"> <form action="/login" method="get"> <button>Login</button> </form> </div> -->
+                <% else %>
+                <div>
+                  <form action="/login" method="get">
+                    <button class="btn btn-primary btn-sm login_btn">Login</button>
+                  </form>
+                </div>
             <% end %>
           </div>
           <div class="clearfix"></div>
@@ -56,7 +61,7 @@
         <span class="navbar-text">
           <% if logged_in? %>
             <div class="wishlist">
-              <span>Number of items in Wish list:
+              <span>Items in Wishlist:
                 <span class="wishes"><%= @wish_total %></span></span>
             </div>
           <% end %>

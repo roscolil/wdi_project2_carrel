@@ -1,14 +1,12 @@
 <% if !logged_in? %>
-<h3>Login to access your bookshelf and wishlist</h3>
+  <h4 class="access_msg">Login to access your bookshelf and wishlist</h4>
 <% end %>
 
+<div style="height: 50px;"></div>
 
-<div style="height: 50px;">
-
-</div>
 <div class="row justify-content-center">
   <form class="search_form" action="/search_result">
-    <label class="search_label">Search books</label>
+    <label class="display-2 search_label">Search books</label>
     <input type="text" name="book" placeholder="Title, Author, Genre">
     <button class="btn btn-primary search_btn btn-sm">Search</button>
   </form>
