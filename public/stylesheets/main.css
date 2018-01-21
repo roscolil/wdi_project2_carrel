@@ -1,11 +1,12 @@
-html {
+html, body {
   box-sizing: border-box;
-}
-
-body {
   background-image: url(/natural_paper.jpg);
   margin: 0 5px 0 5px;
+  height: 100%;
 }
+
+/* body {
+} */
 
 .navbar {
   background-color: black;
