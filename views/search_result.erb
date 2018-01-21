@@ -1,37 +1,37 @@
 <h2>Search results for: <%= @book %></h2>
 
 <div class="container-fluid">
-  <div class="search_list">
-    <ul>
-      <div class="row">
+  <ul class="">
+    <div class="row align-middle search_list">
       <% @search.each do |book| %>
         <% if book["volumeInfo"]["industryIdentifiers"] %>
+        <div class="col-lg-4">
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
-            <div class="list-inline">
-              <li class="list-inline-item">
+            <div style="height: 15px;"></div>
+              <li>
                 <img src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
               </li>
-            </div>
           </a>
+        </div>
+        <div class="col-lg-4">
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
-            <div class="list-inline">
-              <li class="list-inline-item"><%= book["volumeInfo"]["title"] %></li>
-            </div>
+            <div style="height: 15px;"></div>
+            <li><%= book["volumeInfo"]["title"] %></li>
           </a>
+        </div>
+        <div class="col-lg-4">
           <a href="/book_result?id=<%= book["volumeInfo"]["industryIdentifiers"][0]["identifier"] %>">
-            <div class="list-inline">
               <% if book["volumeInfo"]["authors"] %>
-                <li class="list-inline-item"><%= book["volumeInfo"]["authors"][0] %></li>
+              <div style="height: 15px;"></div>
+                <li><%= book["volumeInfo"]["authors"][0] %></li>
               <% end %>
-            </div>
           </a>
+        </div>
         <% end %>
       <% end %>
     </div>
-    </ul>
-  </div>
+  </ul>
 </div>
-
 
 <!-- <div class="pagination">
   <ul>
