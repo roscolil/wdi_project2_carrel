@@ -29,6 +29,12 @@ body {
   font-size: 10px;
 }
 
+.table-borderless,
+.table-borderless tr th,
+.table-borderless tr td {
+  border: none;
+}
+
 .search_list a {
   list-style: none;
   text-decoration: none;

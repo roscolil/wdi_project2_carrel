@@ -16,21 +16,24 @@
     </tr>
   </thead>
   <hr>
-    <tbody>
-      <% @wishes.each do |wish| %>
-        <tr>
-          <th scope="row"><%= wish[1] %></th>
-          <td><%= wish[2] %></td>
-          <td><%= wish[3] %></td>
-          <td><%= wish[4] %></td>
-          <td><%= wish[5] %></td>
-          <td><button class="btn btn-success btn-sm">Purchase</button></td>
-          <form class="" action="/wishes" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <td><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
-          </form>
-
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <tbody class="table-borderless">
+    <% @wishes.each do |wish| %>
+      <tr>
+        <th scope="row"><%= wish[1] %></th>
+        <td><%= wish[2] %></td>
+        <td><%= wish[3] %></td>
+        <td><%= wish[4] %></td>
+        <td><%= wish[5] %></td>
+        <td>
+          <button class="btn btn-success btn-sm">Purchase</button>
+        </td>
+        <form class="" action="/wishes" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <td>
+            <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+          </td>
+        </form>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
