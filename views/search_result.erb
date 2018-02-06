@@ -1,7 +1,7 @@
 <h2>Search results for: <%= @book %></h2>
 
 <div class="container-fluid">
-  <ul>
+  <ul>                            <!-- Include validation in markup. Show what's available -->
     <div class="row align-middle search_list">
       <% @search.each do |book| %>
         <% if book["volumeInfo"]["industryIdentifiers"] %>

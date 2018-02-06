@@ -2,7 +2,7 @@
 require 'pry'
 require 'sinatra'
 require 'httparty'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require_relative 'db_config'
 require_relative 'models/user'
 require_relative 'models/comment'
@@ -133,7 +133,6 @@ post '/wishes' do
     @title = " "
   end
   begin
-    @genre = wish_result["volumeInfo"]["categories"][0]
   rescue
     @genre = " "
   end
