@@ -1,4 +1,4 @@
-# require 'pg'
+require 'pg'
 require 'pry'
 require 'sinatra'
 require 'httparty'
