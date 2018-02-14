@@ -48,7 +48,7 @@ DEPENDENCIES
   activerecord
   bcrypt
   httparty
-  pg (= 0.21.0)
+  pg
   pry
   sinatra
 
