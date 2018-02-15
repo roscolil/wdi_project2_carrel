@@ -1,4 +1,4 @@
-# require 'pg'
+require 'pg'
 require 'active_record'
 
 options = {
