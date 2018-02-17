@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Carrel</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen"> -->
     <link rel='stylesheet' href='/stylesheets/main.css'>
+    <!-- <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen"> -->
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker" rel="stylesheet">
   </head>
@@ -61,9 +61,12 @@
                 <% else %>
                 <div>
                   <form action="/login" method="get">
-                    <button class="btn btn-primary btn-sm login_btn">Login</button>
+                    <button class="btn btn-primary btn-sm login_btn">Login</button><br>
                   </form>
                 </div>
+                <div class="sign-up">
+                <!-- <span>Not a user?</span><a href="/login"> Sign Up</a> -->
+              </div>
             <% end %>
           </div>
           <div class="clearfix"></div>
@@ -77,10 +80,6 @@
         <%= yield %>
       </main>
 
-      <!-- <footer>
-        <div style="height: 30px;"></div>
-          <p class="footer">Made by Ross Lillis 2018</p>
-      </footer> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

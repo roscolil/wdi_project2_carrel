@@ -39,6 +39,11 @@ html, body {
   color: white;
 }
 
+/* .sign-up span {
+  color: black;
+  font-size: 6px;
+  font-weight: bold;
+} */
 
 .login_btn,
 .sign-out-btn {
