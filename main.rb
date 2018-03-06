@@ -82,13 +82,17 @@ get '/about' do
   erb :about
 end
 
+get '/sign_up' do
+  erb :sign_up
+end
+
 get '/login' do
   erb :login
 end
 
 post '/users' do
   user_exists = User.find_by(email: params[:email])
-  if user_exists.email == params[:email]
+  if user_exists == params[:email]
     erb :login
   else
     user = User.new
