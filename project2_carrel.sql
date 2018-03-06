@@ -17,7 +17,6 @@ CREATE TABLE books (
   title VARCHAR(300),
   genre VARCHAR(300),
   author VARCHAR(300),
-  comment TEXT
   );
 
 CREATE TABLE wishes (

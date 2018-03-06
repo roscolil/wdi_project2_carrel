@@ -5,9 +5,6 @@ html, body {
   height: 100%;
 }
 
-/* body {
-} */
-
 .navbar {
   background-color: black;
   opacity: 0.7;
@@ -39,15 +36,9 @@ html, body {
   color: white;
 }
 
-/* .sign-up span {
-  color: black;
-  font-size: 6px;
-  font-weight: bold;
-} */
-
 .login_btn,
 .sign-out-btn {
-  padding: 5 5;
+  padding: 5px 5px;
   font-size: 10px;
 }
 
@@ -82,7 +73,7 @@ html, body {
   padding: 0;
 }
 
-.sub_heading {
+ .sub_heading {
   font-family: 'Indie Flower', cursive;
   font-size: 23px;
   padding: 0;
@@ -98,7 +89,17 @@ html, body {
 
 .bookshelf_form .notes {
   margin-bottom: 0;
-  /* vertical-align: bottom; */
+}
+
+.form-group .login_label {
+  font-size: 18px;
+  vertical-align: bottom;
+  margin-left: 8px;
+  margin-right: 5px;
+}
+
+.form-group button {
+  margin-right: 5px;
 }
 
 button .btn .btn-primary .search_btn {
@@ -112,14 +113,6 @@ button.btn.btn-primary {
 .about {
   max-width: 70%;
 }
-
-.form-group .login_label {
-  /* font-weight: bold; */
-  font-size: 18px;
-  vertical-align: bottom;
-  margin-left: 8px;
-}
-
 
 .search_label {
   font-size: 18px;

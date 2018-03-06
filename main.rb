@@ -2,7 +2,7 @@ require 'pg'
 require 'pry'
 require 'sinatra'
 require 'httparty'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 require_relative 'db_config'
 require_relative 'models/user'
 require_relative 'models/comment'
@@ -44,16 +44,34 @@ get '/book_result' do
   book_search = book_result["items"][0]["volumeInfo"]
 
   @title = book_search["title"]
-  @author = book_search["authors"][0]
+
+  begin
+    @author = book_search["authors"][0]
+  rescue
+    @author = " "
+  end
+
   @publisher = book_search["publisher"]
   @published_date = book_search["publishedDate"]
   @description = book_search["description"]
   @page_count = book_search["pageCount"]
-  @category = book_search["categories"][0]
+
+  begin
+    @category = book_search["categories"][0]
+  rescue
+    @category = " "
+  end
+
   @rating = book_search["averageRating"]
   @id = book_search["industryIdentifiers"][0]["identifier"]
   @thumbnail = book_search["imageLinks"]["smallThumbnail"]
+
+  begin
   @price = book_result["items"][0]["saleInfo"]["listPrice"]["amount"]
+  rescue
+    @price = 0
+  end
+
   erb :book_result
 end
 
@@ -157,8 +175,9 @@ post '/wishes' do
 end
 
 # delete '/wishes/:id' do
-#     wish = Wish.find(params[:id])
-#     wish.destroy
+#   wish = Wish.find(params[:id])
+#   wish.destroy
+#
 #   redirect '/wishlist'
 # end
 
