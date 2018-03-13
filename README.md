@@ -18,14 +18,14 @@ Additionally you can login to use the book catalogue. It's called bookshelf and 
 
 
 ### Technology used:
-HTML/CSS
-Bootstrap
-Ruby
-Deployed to Heroku
+* HTML/CSS
+* Bootstrap
+* Ruby
+* Deployed to Heroku
 
 ### Lessons learned:
-The complexity of google books api
-Some basic bootstrap techniques for buttons, nav/search bars, tables
+* The complexity of google books api
+* Some basic bootstrap techniques for buttons, nav/search bars, tables
 
 ### Version 2.0:
 Display number of hits
