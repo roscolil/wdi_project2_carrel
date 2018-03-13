@@ -18,7 +18,10 @@ Additionally you can login to use the book catalogue. It's called bookshelf and 
 
 
 ### Technology used:
-Only new tech is bootstrap
+HTML/CSS
+Bootstrap
+Ruby
+Deployed to Heroku
 
 ### Lessons learned:
 The complexity of google books api
