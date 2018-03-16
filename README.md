@@ -18,17 +18,20 @@ Additionally you can login to use the book catalogue. It's called bookshelf and 
 
 
 ### Technology used:
-Only new tech is bootstrap
+* HTML/CSS
+* Bootstrap
+* Ruby
+* Deployed to Heroku
 
 ### Lessons learned:
-The complexity of google books api
-Some basic bootstrap techniques for buttons, nav/search bars, tables
+* The complexity of google books api
+* Some basic bootstrap techniques for buttons, nav/search bars, tables
 
 ### Version 2.0:
-Display number of hits
-Share book reviews/ratings
-Refactor api requests
-Pagination for search results
-Sort/Filter book catalogue
-Delete items from book catalogue
-Option to purchase books from an online book store in wish list (checkbox and a single purchase button)
+* Display number of hits
+* Share book reviews/ratings
+* Refactor api requests
+* Pagination for search results
+* Sort/Filter book catalogue
+* Delete items from book catalogue
+* Option to purchase books from an online book store in wish list (checkbox and a single purchase button)
